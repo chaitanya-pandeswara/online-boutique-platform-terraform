@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    
+    environment {
+        AWS_DEFAULT_REGION="ap-south-1"
+        AWS_CREDS=credentials('aws-chaitu')
+    }
+
+    stages {
+        
+        stage('Destroying Platform') {
+            steps {
+                dir('/var/lib/jenkins/workspace/online-boutique-platform-terraform-create/dev') {
+                    sh 'terraform destroy -var-file=dev.tfvars -auto-approve'
+                }
+            }
+        }
+        
+        stage('Destroying S3-DynamoDB') {
+            steps {
+                dir('/var/lib/jenkins/workspace/online-boutique-platform-terraform-create/s3-dynamodb') {
+                    sh 'terraform destroy -auto-approve'
+                }
+            }
+        }
+    }
+}    

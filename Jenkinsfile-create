@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+    
+    environment {
+        AWS_DEFAULT_REGION="ap-south-1"
+        AWS_CREDS=credentials('aws-chaitu')
+    }
+
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git branch: 'dev', credentialsId: 'github-chaitanya-pandeswara', url: 'https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform.git'
+            }
+        }
+        
+        stage('Creating S3-DynamoDB') {
+            steps {
+                dir('s3-dynamodb') {
+                    sh '''
+                    terraform init
+                    terraform validate
+                    terraform plan
+                    terraform apply -auto-approve
+                    
+                    '''
+                }
+            }
+        }
+        
+        stage('Initializing Terraform') {
+            steps {
+                dir('dev') {
+                    sh 'terraform init'
+                }
+            }
+        }
+        stage('Validating Terraform Configuration') {
+            steps {
+              dir('dev') {
+                  sh 'terraform validate'
+              }
+            }
+        }
+        stage('Planning for Platform Creation') {
+            steps {
+                dir('dev') {
+                    sh 'terraform plan -var-file=dev.tfvars'
+                }
+            }
+        }
+        stage('Creating Platform') {
+            steps {
+                dir('dev') {
+                    sh 'terraform apply -var-file=dev.tfvars -auto-approve'                     
+                }
+            }
+        }
+    }
+}
