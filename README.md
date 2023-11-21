@@ -28,7 +28,7 @@ This project aims to deploy a scalable and secure platform on AWS using Terrafor
 
 ​     **GitHub Folder Structure**
 
-​     **<img width="249" alt="git-folder-structure" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/7d7243df-3831-475e-8531-1aae1902da52">**
+​     **<img width="302" alt="github-folder-structure" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/9b040d1a-9b15-4577-a899-f82774e90dbc">**
 
 
 
@@ -40,7 +40,7 @@ https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/tree/
 
 **Architectural Diagram**
 
-<img width="544" alt="architecture" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/620a33b1-6513-4f89-a1f6-c8e9f91b169b">
+<img width="544" alt="project-architectural-diagram" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/3f5ccc16-e6ba-47ca-bab8-9261c1888490">
 
 
 
@@ -209,7 +209,9 @@ https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/tree/
   
     
   
-  <img width="572" alt="terraform-validate-platform" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/a606ed71-34e6-47b7-9b14-436a2404a8fb">
+  <img width="572" alt="terraform-validate-platform" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/21cfef22-0bd9-4315-bbc3-cdcee339db90">
+  
+  
   
   ```
   lenovo@DESKTOP /d/DevOps-Dynamics-Project/terraform-platform-code/dev
@@ -1569,7 +1571,7 @@ https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/tree/
   
   
   
-  <img width="960" alt="terraform-re-apply-platform" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/54be586c-5bd0-4e45-89e5-fe3e5d591369">
+  <img width="960" alt="terraform-re-apply-platform" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/e0369dc3-f161-482e-86b6-909dc970a87e">
   
   
   
@@ -1577,7 +1579,7 @@ https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/tree/
   
   
   
-   <img width="599" alt="terraform-re-destroy-platform" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/ba7537e6-c99a-4208-a4d6-3226296d28a1">
+   <img width="599" alt="terraform-re-destroy-platform" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/14070163-7913-483d-be72-03cd08278fd4">
   
   
 
@@ -1610,11 +1612,11 @@ https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/tree/
   
     
   
-  <img width="971" alt="cluster-access" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/504417bc-80dc-4fd7-ad18-d98340a078c3">
+  <img width="917" alt="cluster-access" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/56b46215-a3ca-4b11-8110-9b6089ae39c0">
   
   
   
-  <img width="707" alt="kubernetes-service-access" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/73b5ef6b-ef82-435e-a1f1-d2294b245712">
+  <img width="707" alt="kubernetes-service-access" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/f377cd63-0f03-4499-9b48-5219cb609629">
 
 
 
@@ -1638,11 +1640,11 @@ https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/tree/
   
     
   
-  <img width="798" alt="jenkins-pipeline-job" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/80dcc54e-31af-476a-91df-f7cd79f834e0">
+  <img width="940" alt="jenkins-job-status" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/665367d4-61a8-481a-8f53-3bc7b5afb9e0">
   
   ​		
   
-  ​		<img width="798" alt="jenkins-destroy-job-status" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/666ccaff-d7cc-426c-aef2-8409aec6a57e">
+  ​		<img width="798" alt="jenkins-destroy-job-status" src="https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform/assets/57262203/de1fec94-7c37-472a-b611-d0994a80d29c">
   
   
 
