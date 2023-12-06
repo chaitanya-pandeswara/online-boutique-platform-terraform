@@ -4,12 +4,13 @@ pipeline {
     environment {
         AWS_DEFAULT_REGION="ap-south-1"
         AWS_CREDS=credentials('aws-chaitu')
+        AWS_EKS_CLUSTER_NAME = ""
     }
 
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'dev', credentialsId: 'github-chaitanya-pandeswara', url: 'https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform.git'
+                git branch: 'feature/SCRUM-15-Test-the-Code-and-Merge-to-Your-Directory-in-GitHub', credentialsId: 'github-chaitanya-pandeswara', url: 'https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform.git'
             }
         }
         
@@ -51,8 +52,16 @@ pipeline {
         stage('Creating Platform') {
             steps {
                 dir('dev') {
-                    sh 'terraform apply -var-file=dev.tfvars -auto-approve'                     
+                    sh 'terraform apply -var-file=dev.tfvars -auto-approve'
+                    AWS_EKS_CLUSTER_NAME = sh(script: "terraform output cluster_name", returnStdout: true).trim()                     
                 }
+            }
+        }
+        post {
+            success {
+                // Archive the environment variable for downstream jobs
+                writeYaml file: 'env-vars.yaml', data: [AWS_EKS_CLUSTER_NAME: AWS_EKS_CLUSTER_NAME]
+                archiveArtifacts artifacts: 'env-vars.yaml', allowEmptyArchive: true
             }
         }
     }
