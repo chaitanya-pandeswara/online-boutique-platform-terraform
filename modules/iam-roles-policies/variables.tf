@@ -1,6 +1,5 @@
 variable "env_name" {
-  description = "Environment tag"
-  #default = "dev"
+  description = "Environment tag"  
 }
 
 variable "eks_cluster_role_name" {

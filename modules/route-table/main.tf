@@ -8,7 +8,7 @@ resource "aws_default_route_table" "terra_rtb" {
   }
 
   tags = {
-    Name = "terra-rtb"
+    Name = var.rtb_tag_name
     env = var.env_name
   }
 }

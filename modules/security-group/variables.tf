@@ -12,7 +12,14 @@ variable "vpc_id" {
 #  # default = "0.0.0.0/0"
 # }
 
+variable "sg_name" {
+  description = "SG name" 
+}
+
 variable "env_name" {
-  description = "Environment tag"
- # default = "dev"
+  description = "Environment tag" 
+}
+
+variable "sg_tag_name" {
+  description = "SG name tag" 
 }

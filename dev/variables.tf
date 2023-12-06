@@ -1,10 +1,24 @@
 variable "vpc_cidr" {}
 
+variable "availability_zones" {
+  type = list(any)
+}
+
 variable "cidr_pub_subnet" {
   type = list(any)
 }
 
 variable "env_name" {}
+
+variable "vpc_tag_name" {}
+
+variable "igw_tag_name" {}
+
+variable "rtb_tag_name" {}
+
+variable "sg_tag_name" {}
+
+variable "sg_name" {}
 
 variable "cluster_name" {}
 
@@ -25,14 +39,6 @@ variable "scaling_min_size" {}
 variable "instance_types" {}
 
 variable "key_pair" {}
-
-# variable "cluster_role_arn" {
-#   description = "Cluster role arn" 
-# }
-
-# variable "node_group_role_arn" {
-#   description = "Node Group role arn" 
-# }
 
 variable "eks_cluster_role_name" {
   description = "Cluster role name"  
