@@ -52,17 +52,20 @@ pipeline {
         stage('Creating Platform') {
             steps {
                 dir('dev') {
+                    script {
                     sh 'terraform apply -var-file=dev.tfvars -auto-approve'
-                    AWS_EKS_CLUSTER_NAME = sh(script: "terraform output cluster_name", returnStdout: true).trim()                     
+                    AWS_EKS_CLUSTER_NAME = sh(script: "terraform output cluster_name", returnStdout: true).trim()
+                    }
                 }
             }
         }
-        post {
+    }
+    
+    post {
             success {
                 // Archive the environment variable for downstream jobs
-                writeYaml file: 'env-vars.yaml', data: [AWS_EKS_CLUSTER_NAME: AWS_EKS_CLUSTER_NAME]
+                writeFile file: 'env-vars.yaml', text: "AWS_EKS_CLUSTER_NAME: ${AWS_EKS_CLUSTER_NAME}"
                 archiveArtifacts artifacts: 'env-vars.yaml', allowEmptyArchive: true
             }
-        }
     }
 }
