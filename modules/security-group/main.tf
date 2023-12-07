@@ -1,6 +1,6 @@
 # Creating Security Group for EKS cluster
 resource "aws_security_group" "terra_sg" {
-  name = "terra-sg"
+  name = var.sg_name
   description = "To provide access to Chaitanya."
   vpc_id = var.vpc_id
   
@@ -28,7 +28,7 @@ resource "aws_security_group" "terra_sg" {
   }
 
   tags = {
-    Name = "terra-sg"
+    Name = var.sg_tag_name
     env = var.env_name
   }
 

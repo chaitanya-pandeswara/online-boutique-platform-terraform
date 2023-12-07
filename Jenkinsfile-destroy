@@ -1,4 +1,5 @@
 pipeline {
+    
     agent any
     
     environment {
@@ -8,9 +9,23 @@ pipeline {
 
     stages {
         
+        stage('Git Checkout') {
+            steps {
+                git branch: 'feature/SCRUM-15-Test-the-Code-and-Merge-to-Your-Directory-in-GitHub', credentialsId: 'github-chaitanya-pandeswara', url: 'https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform.git'
+            }
+        }
+
+        stage('Initializing Terraform') {
+            steps {
+                dir('dev') {
+                    sh 'terraform init'
+                }
+            }
+        }
+
         stage('Destroying Platform') {
             steps {
-                dir('/var/lib/jenkins/workspace/online-boutique-platform-terraform-create/dev') {
+                dir('dev') {
                     sh 'terraform destroy -var-file=dev.tfvars -auto-approve'
                 }
             }
@@ -24,4 +39,4 @@ pipeline {
             }
         }
     }
-}    
+}
