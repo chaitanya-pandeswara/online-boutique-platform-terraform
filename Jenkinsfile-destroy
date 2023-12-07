@@ -11,7 +11,7 @@ pipeline {
         
         stage('Git Checkout') {
             steps {
-                git branch: 'feature/SCRUM-15-Test-the-Code-and-Merge-to-Your-Directory-in-GitHub', credentialsId: 'github-chaitanya-pandeswara', url: 'https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform.git'
+                git branch: 'dev', credentialsId: 'github-chaitanya-pandeswara', url: 'https://github.com/chaitanya-pandeswara/online-boutique-platform-terraform.git'
             }
         }
 
