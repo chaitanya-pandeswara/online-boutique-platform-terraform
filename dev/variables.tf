@@ -10,6 +10,8 @@ variable "cidr_pub_subnet" {
 
 variable "env_name" {}
 
+variable "provider_region" {}
+
 variable "vpc_tag_name" {}
 
 variable "igw_tag_name" {}
